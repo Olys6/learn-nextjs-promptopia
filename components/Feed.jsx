@@ -10,7 +10,7 @@ const PromptCardList = ({
 	filteredData,
 }) => {
 	return (
-		<div className='mt-16 prompt_layout'>
+		<div className='mt-16 space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3'>
 			{filteredData(data)?.map(post => (
 				<PromptCard
 					key={post._id}
@@ -51,7 +51,7 @@ const Feed = () => {
 			try {
 				const response = await fetch('/api/prompt', {
 					method: 'GET',
-					headers: { 'Carche-Control': 'no-store' },
+					headers: { 'Cache-Control': 'no-store' },
 				});
 				const data = await response.json();
 
